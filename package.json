@@ -1,0 +1,14 @@
+{
+  "name": "whatsapp-bot-koyeb",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp sur Koyeb",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.21",
+    "qrcode-terminal": "^0.12.0",
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,21 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Installer Python et make (nécessaires pour certaines dépendances)
+RUN apk add --no-cache python3 make g++
+
+# Copier package.json d'abord
+COPY package.json package-lock.json* ./
+
+# Installer dépendances avec cache
+RUN npm ci --only=production --no-audit
+
+# Copier le reste
+COPY . .
+
+# Port
+EXPOSE 3000
+
+# Démarrer
+CMD ["node", "index.js"]

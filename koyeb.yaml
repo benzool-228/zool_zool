@@ -6,9 +6,9 @@ env:
   - name: PORT
     value: 3000
 build:
-  command: npm install
+  command: docker build -t whatsapp-bot .
 run:
-  command: npm start
+  command: docker run -p 3000:3000 whatsapp-bot
   ports:
     - port: 3000
       protocol: http
